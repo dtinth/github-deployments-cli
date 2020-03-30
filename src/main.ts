@@ -60,7 +60,6 @@ cli()
     },
     async args => {
       try {
-        console.log(args)
         const out = await octokit.repos.createDeployment({
           owner: args.owner,
           repo: args.repo,
