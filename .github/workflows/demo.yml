@@ -27,6 +27,6 @@ jobs:
             --owner=dtinth --repo=github-deployments-cli --deployment=/tmp/deployment.json \
             --state=success \
             --log-url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID \
-            --target-url=https://github.com/dtinth/github-deployments-cli
+            --environment-url=https://github.com/dtinth/github-deployments-cli
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
