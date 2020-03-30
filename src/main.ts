@@ -132,7 +132,7 @@ cli()
       try {
         const deploymentId =
           args.deploymentId ||
-          JSON.parse(readFileSync(args.deployment!, 'utf8'))
+          JSON.parse(readFileSync(args.deployment!, 'utf8')).id
         const out = await octokit.repos.createDeploymentStatus({
           owner: args.owner,
           repo: args.repo,
