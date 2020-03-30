@@ -15,6 +15,7 @@ jobs:
           ./cli.js create-deployment \
             --owner=dtinth --repo=github-deployments-cli --ref=$GITHUB_SHA \
             --environment=demo --production-environment \
+            --required-contexts= \
             | tee /tmp/deployment.json
 
           ./cli.js create-deployment-status \

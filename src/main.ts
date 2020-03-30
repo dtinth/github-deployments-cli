@@ -42,6 +42,11 @@ cli()
         description: 'Short description of the deployment',
         type: 'string',
       },
+      requiredContexts: {
+        description:
+          'Comma-separated status contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty string.',
+        type: 'string',
+      },
       transientEnvironment: {
         description:
           'Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future',
@@ -62,6 +67,10 @@ cli()
           environment: args.environment,
           transient_environment: args.transientEnvironment,
           production_environment: args.productionEnvironment,
+          required_contexts:
+            args.requiredContexts == null
+              ? undefined
+              : args.requiredContexts.split(','),
         })
         console.log(JSON.stringify(out.data, null, 2))
       } catch (error) {
