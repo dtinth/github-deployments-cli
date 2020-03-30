@@ -1,5 +1,5 @@
 import { cli } from 'tkt'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync } from 'fs'
 import { Octokit } from '@octokit/rest'
 
 const token = process.env['GITHUB_TOKEN']
