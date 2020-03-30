@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@octokit/app": "^4.2.0",
+    "@octokit/rest": "^17.1.4",
     "@types/node": "^13.9.1",
     "@zeit/ncc": "^0.21.1",
     "tkt": "^2.0.0"
@@ -9,20 +9,20 @@
     "prepublish": "rm -rf dist && ncc build src/main.ts -o dist -s"
   },
   "bin": {
-    "obtain-github-app-installation-access-token": "./cli.js"
+    "github-deployments-cli": "./cli.js"
   },
   "files": [
     "cli.js",
     "dist"
   ],
-  "name": "obtain-github-app-installation-access-token",
+  "name": "github-deployments-cli",
   "version": "1.0.0",
-  "description": "A simple CLI to obtain a GitHub App Installation Access Token",
+  "description": "A simple CLI interface to GitHub Deployments API",
   "main": "index.js",
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dtinth/obtain-github-app-installation-access-token.git"
+    "url": "git+https://github.com/dtinth/github-deployments-cli.git"
   },
   "keywords": [
     "GitHub",
@@ -31,7 +31,7 @@
   "author": "Thai Pangsakulyanont <org.yi.dttvb@gmail.com> (http://dt.in.th/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dtinth/obtain-github-app-installation-access-token/issues"
+    "url": "https://github.com/dtinth/github-deployments-cli/issues"
   },
-  "homepage": "https://github.com/dtinth/obtain-github-app-installation-access-token#readme"
+  "homepage": "https://github.com/dtinth/github-deployments-cli#readme"
 }
