@@ -140,7 +140,7 @@ cli()
           state: args.state as any,
           log_url: args.logUrl,
           description: args.description,
-          environmentUrl: args.environmentUrl,
+          environment_url: args.environmentUrl,
           auto_inactive: args.autoInactive,
         })
         console.log(JSON.stringify(out.data, null, 2))
