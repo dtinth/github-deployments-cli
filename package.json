@@ -16,7 +16,7 @@
     "dist"
   ],
   "name": "github-deployments-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple CLI interface to GitHub Deployments API",
   "main": "index.js",
   "dependencies": {},
