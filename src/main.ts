@@ -60,6 +60,7 @@ cli()
     },
     async args => {
       try {
+        console.log(args)
         const out = await octokit.repos.createDeployment({
           owner: args.owner,
           repo: args.repo,
@@ -70,7 +71,7 @@ cli()
           required_contexts:
             args.requiredContexts == null
               ? undefined
-              : args.requiredContexts.split(','),
+              : args.requiredContexts.split(',').filter(x => x),
         })
         console.log(JSON.stringify(out.data, null, 2))
       } catch (error) {
