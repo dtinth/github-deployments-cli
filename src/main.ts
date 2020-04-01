@@ -57,6 +57,12 @@ cli()
           'Specifies if the given environment is one that end-users directly interact with',
         type: 'boolean',
       },
+      autoMerge: {
+        description:
+          "Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.",
+        type: 'boolean',
+        default: true,
+      },
     },
     async args => {
       try {
@@ -142,6 +148,7 @@ cli()
           description: args.description,
           environment_url: args.environmentUrl,
           auto_inactive: args.autoInactive,
+          auto_merge: args.autoMerge,
         })
         console.log(JSON.stringify(out.data, null, 2))
       } catch (error) {
