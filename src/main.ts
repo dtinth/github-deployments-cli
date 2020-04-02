@@ -77,6 +77,7 @@ cli()
             args.requiredContexts == null
               ? undefined
               : args.requiredContexts.split(',').filter(x => x),
+          auto_merge: args.autoMerge,
         })
         console.log(JSON.stringify(out.data, null, 2))
       } catch (error) {
@@ -148,7 +149,6 @@ cli()
           description: args.description,
           environment_url: args.environmentUrl,
           auto_inactive: args.autoInactive,
-          auto_merge: args.autoMerge,
         })
         console.log(JSON.stringify(out.data, null, 2))
       } catch (error) {
