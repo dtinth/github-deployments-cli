@@ -15,16 +15,19 @@ jobs:
           ./cli.js create-deployment \
             --owner=dtinth --repo=github-deployments-cli --ref=$GITHUB_SHA \
             --environment=demo --production-environment \
+            --description="Insert deployment description here" \
             --required-contexts= \
             | tee /tmp/deployment.json
 
           ./cli.js create-deployment-status \
             --owner=dtinth --repo=github-deployments-cli --deployment=/tmp/deployment.json \
+            --description="Deployment is in progress" \
             --state=in_progress \
             --log-url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
 
           ./cli.js create-deployment-status \
             --owner=dtinth --repo=github-deployments-cli --deployment=/tmp/deployment.json \
+            --description="Deployment is successful" \
             --state=success \
             --log-url=https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID \
             --environment-url=https://github.com/dtinth/github-deployments-cli
